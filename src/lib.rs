@@ -1,6 +1,6 @@
 #![allow(dead_code)]
-mod vector;
-mod matrix;
-
-pub use matrix::Matrix;
-pub use vector::Vector;
+pub mod parser; // Primitives
+pub mod combinators; // Parser combinators
+// Re-exports
+pub use parser::*;
+pub use combinators::*;
