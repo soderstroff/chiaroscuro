@@ -4,16 +4,18 @@ use chiaro::*;
 
 fn main() {
 
-    let endl = seq! {
-        option(char(b'\r'));
-        char(b'\n')
-    };
+    // let endl = seq! {
+    //     option(char(b'\r'));
+    //     char(b'\n')
+    // };
 
-    let http_version = seq! {
-        string("HTTP/");
-        version = take_while(is_http_version);
-        ret(version)
-    };
+    // let http_version = seq! {
+    //     string("HTTP/");
+    //     version = take_while(is_http_version);
+    //     ret(version)
+    // };
+
+    let http_version = string("HTTP/").seq(take_while(is_http_version));
 
     let request_line =
         take_while(is_token).bind(
