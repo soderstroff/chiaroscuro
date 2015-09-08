@@ -41,25 +41,26 @@ fn main() {
     //     ret(line)
     // };
 
-    /*let message_header = seq! {
-        name = take_while(is_token);
-        char(b':');
-        lines = collect_many1(message_header_line);
-        ret(header(name, lines))
-    };*/
-    /*let message_header = take_while(is_token).bind(
-        |name| { char(b':').seq(collect_many1(message_header_line)).bind(
-            |lines| { ret(header(name, lines))}
-            )}
-        );
-
-    let request = seq! {
-        r = request_line;
-        endl;
-        h = many(message_header);
-        endl;
-        ret((r, h))
-    };*/
+    // let message_header = seq! {
+    //     name = take_while(is_token);
+    //     char(b':');
+    //     lines = collect_many1(message_header_line);
+    //     ret(header(name, lines))
+    // };
+    //
+    // let message_header = take_while(is_token).bind(
+    //     |name| { char(b':').seq(collect_many1(message_header_line)).bind(
+    //         |lines| { ret(header(name, lines))}
+    //         )}
+    //     );
+    //
+    // let request = seq! {
+    //     r = request_line;
+    //     endl;
+    //     h = many(message_header);
+    //     endl;
+    //     ret((r, h))
+    // };
 }
 
 #[derive(Clone)]
